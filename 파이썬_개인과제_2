@@ -1,1 +1,15 @@
+class Person:
+    def __init__(self, name, gender, age):
+        self.name = name  # 이름 속성
+        self.gender = gender  # 성별 속성
+        self.age = age  # 나이 속성
+
+    def display(self):
+        print(f"이름: {self.name}, 성별: {self.gender}, 나이: {self.age}")
+
+# Person 클래스로 객체 생성
+person = Person("이명혜", "여성", 25)
+
+# display 메서드 호출
+person.display()
 
