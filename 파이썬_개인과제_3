@@ -15,7 +15,9 @@ print(df)
 
 
 
-
+index_to_drop = df[df['구별'] == '구 없음'].index
+df.drop(index_to_drop, inplace=True)
+print(df)
 
 
 
