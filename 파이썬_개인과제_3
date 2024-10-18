@@ -13,7 +13,15 @@ order={'서대문서': '서대문구', '수서서': '강남구', '강서서': '�
 df['구별']=df['관서명'].map(order).fillna('구 없음')
 print(df)
 
+pivot_df = pd.pivot_table(df, 
+                          values='계', 
+                          index='구별', 
+                          columns=['강간(검거)', '강간(발생)', '강도(검거)', '강도(발생)', 
+                                   '살인(검거)', '살인(발생)', '소계(검거)', '소계(발생)', 
+                                   '절도(검거)', '절도(발생)', '폭력(검거)', '폭력(발생)'], 
+                          aggfunc='sum')
 
+print(pivot_df)
 
 index_to_drop = df[df['구별'] == '구 없음'].index
 df.drop(index_to_drop, inplace=True)
